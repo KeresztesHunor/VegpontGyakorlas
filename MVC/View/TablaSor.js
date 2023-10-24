@@ -1,12 +1,12 @@
-import { dictionaryKiir, parosTag } from "../../htmlUtils.js";
+import { tagDct, tagTwo } from "../../htmlUtils.js";
 
 class TablaSor
 {
     constructor(szuloElem, adatObjektum)
     {
         szuloElem.append(
-            parosTag("tr", {}, [
-                dictionaryKiir(adatObjektum, (kulcs, ertek) => parosTag("td", {}, [ertek]))
+            tagTwo("tr", {}, [
+                tagDct(adatObjektum, (kulcs, ertek) => tagTwo("td", {}, [ertek]))
             ])
         );
     }

@@ -1,4 +1,4 @@
-import { listaKiir, parosTag } from "../../htmlUtils.js";
+import { tagLst, tagTwo } from "../../htmlUtils.js";
 import TablaSor from "./TablaSor.js";
 
 class Tabla
@@ -6,11 +6,11 @@ class Tabla
     constructor(szuloElem, adatLista, tablaFejlecNevek)
     {
         szuloElem.append(
-            parosTag("table", { class: "table table-bordered" }, [
-                parosTag("thead", {}, [
-                    parosTag("tr", {}, listaKiir(tablaFejlecNevek, fejlecNev => parosTag("th", {}, [fejlecNev])))
+            tagTwo("table", { class: "table table-bordered" }, [
+                tagTwo("thead", {}, [
+                    tagTwo("tr", {}, tagLst(tablaFejlecNevek, fejlecNev => tagTwo("th", {}, [fejlecNev])))
                 ]),
-                parosTag("tbody")
+                tagTwo("tbody")
             ])
         );
         const SOR_SZULO_ELEM = szuloElem.children("table").children("tbody");

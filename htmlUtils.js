@@ -1,18 +1,18 @@
-export function parosTag(tag, parameterek = {}, tartalom = [])
+export function tagTwo(tag, parameterek = {}, tartalom = [])
 {
     let txt = "";
     tartalom.forEach(elem => txt += elem);
-    return `${paratlanTag(tag, parameterek)}${txt}</${tag}>`;
+    return `${tagOne(tag, parameterek)}${txt}</${tag}>`;
 }
 
-export function listaKiir(lista, callbackFuggveny)
+export function tagLst(lista, callbackFuggveny)
 {
     const LISTA = [];
     lista.forEach(elem => LISTA.push(callbackFuggveny(elem)));
     return LISTA;
 }
 
-export function dictionaryKiir(dict, callbackMetodus)
+export function tagDct(dict, callbackMetodus)
 {
     let txt = "";
     for (const kulcs in dict)
@@ -22,7 +22,7 @@ export function dictionaryKiir(dict, callbackMetodus)
     return txt;
 }
 
-export function paratlanTag(tag, parameterek = {})
+export function tagOne(tag, parameterek = {})
 {
-    return `<${tag}${dictionaryKiir(parameterek, (kulcs, ertek) => ` ${kulcs}="${ertek}"`)}>`;
+    return `<${tag}${tagDct(parameterek, (kulcs, ertek) => ` ${kulcs}="${ertek}"`)}>`;
 }
