@@ -7,9 +7,9 @@ export function tagTwo(tag, parameterek = {}, tartalom = [])
 
 export function tagLst(lista, callbackFuggveny)
 {
-    const LISTA = [];
-    lista.forEach(elem => LISTA.push(callbackFuggveny(elem)));
-    return LISTA;
+    let txt = "";
+    lista.forEach(elem => txt += callbackFuggveny(elem));
+    return txt;
 }
 
 export function tagDct(dict, callbackMetodus)

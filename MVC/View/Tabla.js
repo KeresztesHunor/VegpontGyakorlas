@@ -8,7 +8,9 @@ class Tabla
         szuloElem.append(
             tagTwo("table", { class: "table table-bordered" }, [
                 tagTwo("thead", {}, [
-                    tagTwo("tr", {}, tagLst(tablaFejlecNevek, fejlecNev => tagTwo("th", {}, [fejlecNev])))
+                    tagTwo("tr", {}, [
+                        tagLst(tablaFejlecNevek, fejlecNev => tagTwo("th", {}, [fejlecNev]))
+                    ])
                 ]),
                 tagTwo("tbody")
             ])
