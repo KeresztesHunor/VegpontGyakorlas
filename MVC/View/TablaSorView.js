@@ -1,6 +1,6 @@
 import { tagDct, tagTwo } from "../../htmlUtils.js";
 
-class TablaSor
+class TablaSorView
 {
     constructor(szuloElem, adatObjektum)
     {
@@ -12,4 +12,4 @@ class TablaSor
     }
 }
 
-export default TablaSor;
+export default TablaSorView;

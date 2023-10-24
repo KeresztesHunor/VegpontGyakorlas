@@ -1,6 +1,6 @@
 import AdatModel from "../Model/AdatModel.js";
 import DataService from "../Model/DataService.js";
-import Tabla from "../View/Tabla.js";
+import TablaView from "../View/TablaView.js";
 import HibaView from "../View/HibaView.js";
 import UrlapView from "../View/UrlapView.js";
 import urlapLeiro from "../Model/urlapLeiro.js";
@@ -17,7 +17,7 @@ class AdatController
 
     #adatokMegjelenit(adatLista)
     {
-        const ADAT_VIEW = new Tabla($("#lista"), adatLista, ["Név", "Szül. év"]);
+        const ADAT_VIEW = new TablaView($("#lista"), adatLista, [urlapLeiro.nev.megj, urlapLeiro.szul.megj]);
     }
 
     #hibaMegjelenit(error)

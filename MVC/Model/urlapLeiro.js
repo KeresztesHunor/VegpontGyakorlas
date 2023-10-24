@@ -3,7 +3,7 @@ const urlapLeiro = {
         megj: "Név",
         type: "text",
         placeholder: "Név",
-        pattern: /[A-Z][a-z]{2,15}/,
+        pattern: "[A-Z][a-z]{2,15}",
         title: "1 nagybetűvel kezdődik, legalább 3 karakter, legfeljebb 15"
     },
     szul: {

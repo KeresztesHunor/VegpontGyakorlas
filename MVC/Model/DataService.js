@@ -7,14 +7,12 @@ class DataService
 
     getData(vegpont, callbackFuggveny, hibaCallback)
     {
-        axios.get(vegpont)
-        .then(response => {
-            callbackFuggveny(response.data.nevek);
-        })
-        .catch(hibaCallback)
-        .finally(() => {
-            
-        });
+        axios
+            .get(vegpont)
+            .then(response => {
+                callbackFuggveny(response.data.nevek);
+            })
+            .catch(hibaCallback);
     }
 }
 

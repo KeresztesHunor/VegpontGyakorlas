@@ -1,7 +1,7 @@
 import { tagLst, tagTwo } from "../../htmlUtils.js";
-import TablaSor from "./TablaSor.js";
+import TablaSorView from "./TablaSorView.js";
 
-class Tabla
+class TablaView
 {
     constructor(szuloElem, adatLista, tablaFejlecNevek)
     {
@@ -17,9 +17,9 @@ class Tabla
         );
         const SOR_SZULO_ELEM = szuloElem.children("table").children("tbody");
         adatLista.forEach(adat => {
-            new TablaSor(SOR_SZULO_ELEM, adat);
+            new TablaSorView(SOR_SZULO_ELEM, adat);
         });
     }
 }
 
-export default Tabla;
+export default TablaView;
