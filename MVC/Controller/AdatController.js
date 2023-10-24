@@ -3,7 +3,7 @@ import DataService from "../Model/DataService.js";
 import Tabla from "../View/Tabla.js";
 import HibaView from "../View/HibaView.js";
 import UrlapView from "../View/UrlapView.js";
-import urlapLeiro from "../Model/adat.js";
+import urlapLeiro from "../Model/urlapLeiro.js";
 
 class AdatController
 {
