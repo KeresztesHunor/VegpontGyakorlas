@@ -1,0 +1,3 @@
+# Aszinkron adatelérés
+
+Axios használatával
