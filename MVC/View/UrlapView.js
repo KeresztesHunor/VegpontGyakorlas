@@ -1,26 +1,18 @@
-import { tagOne, tagTwo } from "../../htmlUtils.js";
+import { tagDct, tagOne, tagTwo } from "../../htmlUtils.js";
 
 class UrlapView
 {
     constructor(szuloElem, leiro)
     {
         szuloElem.append(
-            tagTwo("form", {}, (() => {
-                const TARTALOM_LISTA = [];
-                for (const KULCS in leiro)
-                {
-                    const ERTEK = leiro[KULCS];
-                    TARTALOM_LISTA.push(
-                        tagTwo("div", { class: "form-group" }, [
-                            tagTwo("label", { for: KULCS }, [ERTEK.megj]),
-                            tagOne("input", { type: ERTEK.type, name: KULCS, placeholder: ERTEK.placeholder, value: "", title: ERTEK.title, class: "form-control" })
-                        ])
-                    );
-                }
-                TARTALOM_LISTA.push(tagOne("input", { type: "submit", value: "OK", class: "btn btn-primary" }));
-                return TARTALOM_LISTA;
-            })()
-        ));
+            tagTwo("form", {}, [
+                tagDct(leiro, (kulcs, ertek) => tagTwo("div", { class: "form-group" }, [
+                    tagTwo("label", { for: kulcs }, [ertek.megj]),
+                    tagOne("input", { type: ertek.type, name: kulcs, placeholder: ertek.placeholder, value: "", title: ertek.title, class: "form-control" })
+                ]))
+            ]),
+            tagOne("input", { type: "submit", value: "OK", class: "btn btn-primary" })
+        );
         szuloElem.children("form").children(".form-group").children("input").toArray().forEach(mezo => {
             const MEZO_ELEM = $(mezo);
             const INPUT_MEZO_LEIRO = leiro[MEZO_ELEM.attr("name")];
