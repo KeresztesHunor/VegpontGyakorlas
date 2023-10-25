@@ -13,6 +13,9 @@ class AdatController
         const DATA_SERVICE = new DataService();
         const URLAP_VIEW = new UrlapView($("#urlap"), urlapLeiro);
         DATA_SERVICE.getData("../../adat.json", this.#adatokMegjelenit, this.#hibaMegjelenit);
+        $(window).on("validFormSubmitEvent", event => {
+            console.log(event.detail);
+        });
     }
 
     #adatokMegjelenit(adatLista)

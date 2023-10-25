@@ -30,9 +30,18 @@ class UrlapView
             MEZO_ELEM.prop("required", true);
         });
         FORM_ELEM.on("submit", event => {
-            if (FORM_ELEM[0].checkValidity())
+            event.preventDefault();
+            if (FORM_ELEM[0].checkValidity()) // ez valamiért csak [0]-val működik
             {
-                
+                const DATA = {};
+                FORM_ELEM.find("input").toArray().forEach(inputMezo => {
+                    const INPUT_MEZO_ELEM = $(inputMezo);
+                    if (INPUT_MEZO_ELEM.attr("type") !== "submit")
+                    {
+                        DATA[INPUT_MEZO_ELEM.attr("name")] = INPUT_MEZO_ELEM.val();
+                    }
+                });
+                window.dispatchEvent(new CustomEvent("validFormSubmitEvent", { detail: DATA }));
             }
             else
             {
