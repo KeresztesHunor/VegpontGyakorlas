@@ -5,12 +5,12 @@ class UrlapView
     constructor(szuloElem, leiro)
     {
         szuloElem.append(
-            tagTwo("form", {}, [
+            tagTwo("form", { class: "border p-2 mb-2" }, [
                 tagDct(leiro, (kulcs, ertek) => tagTwo("div", { class: "form-group" }, [
                     tagTwo("label", { for: kulcs }, [ertek.megj]),
-                    tagOne("input", { type: ertek.type, name: kulcs, placeholder: ertek.placeholder, value: "", title: ertek.title, class: "form-control" })
+                    tagOne("input", { type: ertek.type, id: kulcs, name: kulcs, placeholder: ertek.placeholder, value: "", title: ertek.title, class: "form-control" })
                 ])),
-                tagOne("input", { type: "submit", value: "OK", class: "btn btn-primary" })
+                tagOne("input", { type: "submit", value: "OK", class: "btn btn-primary mt-2" })
             ])
         );
         const FORM_ELEM = szuloElem.children("form");

@@ -7,12 +7,16 @@ import urlapLeiro from "../Model/urlapLeiro.js";
 
 class AdatController
 {
+    #adatModel;
+    #dataService;
+    #urlapView;
+
     constructor()
     {
-        const ADAT_MODEL = new AdatModel();
-        const DATA_SERVICE = new DataService();
-        const URLAP_VIEW = new UrlapView($("#urlap"), urlapLeiro);
-        DATA_SERVICE.getData("../../adat.json", this.#adatokMegjelenit, this.#hibaMegjelenit);
+        this.#adatModel = new AdatModel();
+        this.#dataService = new DataService();
+        this.#urlapView = new UrlapView($("#urlap"), urlapLeiro);
+        this.#dataService.getData("../../adat.json", this.#adatokMegjelenit, this.#hibaMegjelenit);
         $(window).on("validFormSubmitEvent", event => {
             console.log(event.detail);
         });
